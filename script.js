@@ -1,7 +1,7 @@
 // CONFIGURE AQUI OS SEUS LINKS ANTES DE PUBLICAR.
 const CONFIG = {
   linkedin: 'https://www.linkedin.com/', // Substituir pela URL exata do perfil
-  email: 'SEU-EMAIL@EXEMPLO.COM'           // Substituir pelo e-mail profissional
+  email: 'marcio5903@gmail.com'           // Substituir pelo e-mail profissional
 };
 
 document.getElementById('year').textContent = new Date().getFullYear();
