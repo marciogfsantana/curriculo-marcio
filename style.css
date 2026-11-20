@@ -1,731 +1,779 @@
 
-/* ==========================================================
-   CURRÍCULO ONLINE — MARCIO SANTANA
-   Tema escuro | Azul e ciano | Layout responsivo
-   ========================================================== */
-
-:root {
-  --bg: #080f1e;
-  --bg2: #0d172a;
-  --panel: #101e34;
-  --line: #23354f;
-  --text: #eaf2ff;
-  --muted: #a3b3ca;
-  --blue: #42a5ff;
-  --cyan: #67e3ef;
-  --green: #6ee7b7;
-}
-
-/* CONFIGURAÇÕES GERAIS */
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font: 16px/1.7 system-ui, -apple-system, "Segoe UI",
-        Roboto, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: 3px solid var(--cyan);
-  outline-offset: 4px;
-}
-
-.container {
-  width: min(1140px, calc(100% - 44px));
-  margin: auto;
-}
-
-.skip {
-  position: absolute;
-  top: -80px;
-  left: 10px;
-  background: white;
-  color: black;
-  padding: 10px;
-  z-index: 30;
-}
-
-.skip:focus {
-  top: 10px;
-}
-
-/* ==========================================================
-   CABEÇALHO E NAVEGAÇÃO
-   ========================================================== */
-
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: #080f1eea;
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
-}
-
-.nav {
-  min-height: 74px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.brand {
-  font-weight: 800;
-  letter-spacing: .04em;
-  font-size: 1.03rem;
-}
-
-.prompt,
-.accent {
-  color: var(--blue);
-}
-
-.prompt {
-  margin-right: 8px;
-}
-
-.menu {
-  display: flex;
-  gap: 25px;
-}
-
-.menu a {
-  font-size: .89rem;
-  color: var(--muted);
-}
-
-.menu a:hover {
-  color: var(--cyan);
-}
-
-.menu-toggle {
-  display: none;
-  background: none;
-  color: white;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 5px 11px;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-/* ==========================================================
-   APRESENTAÇÃO PRINCIPAL
-   ========================================================== */
-
-.hero {
-  min-height: 650px;
-  padding-top: 115px;
-  padding-bottom: 105px;
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  align-items: center;
-  gap: 60px;
-}
-
-.eyebrow {
-  color: var(--cyan);
-  font-size: .75rem;
-  font-weight: 800;
-  letter-spacing: .18em;
-  margin: 0 0 20px;
-}
-
-.status-dot {
-  display: inline-block;
-  background: var(--green);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  margin-right: 8px;
-  box-shadow: 0 0 14px var(--green);
-}
-
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-}
-
-h1 {
-  font-size: clamp(2.35rem, 4.3vw, 4.6rem);
-  line-height: 1.12;
-  letter-spacing: -.055em;
-  margin-bottom: 24px;
-}
-
-h2 {
-  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
-  line-height: 1.2;
-  letter-spacing: -.035em;
-  margin-bottom: 30px;
-  max-width: 750px;
-}
-
-.gradient {
-  background: linear-gradient(95deg, var(--blue), var(--cyan));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.lead {
-  font-size: 1.12rem;
-  color: #d2def0;
-  line-height: 1.7;
-}
-
-.intro,
-.two-col p,
-.job p,
-.skill p,
-.contact p {
-  color: var(--muted);
-}
-
-/* ==========================================================
-   BOTÕES
-   ========================================================== */
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 28px 0;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  padding: 12px 19px;
-  font-weight: 700;
-  font-size: .91rem;
-  transition: transform .2s, background .2s;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.primary {
-  background: #268ce7;
-  border-color: #268ce7;
-  color: #fff;
-}
-
-.primary:hover {
-  background: #1477cf;
-}
-
-.secondary {
-  background: #111e32;
-}
-
-.secondary:hover {
-  background: #1b2d48;
-}
-
-/* ==========================================================
-   ETIQUETAS E CERTIFICAÇÕES
-   ========================================================== */
-
-.hero-tags,
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-}
-
-.hero-tags span,
-.chips span {
-  border: 1px solid var(--line);
-  background: #102039;
-  border-radius: 30px;
-  padding: 5px 12px;
-  color: #b9cce4;
-  font-size: .77rem;
-}
-
-/* ==========================================================
-   TERMINAL LINUX
-   ========================================================== */
-
-.terminal {
-  border: 1px solid #315174;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #091426;
-  box-shadow: 0 25px 80px #0008,
-              0 0 65px #137bd51a;
-  transform: rotate(1deg);
-}
-
-.terminal-top {
-  background: #17283e;
-  border-bottom: 1px solid #2d4059;
-  padding: 10px 16px;
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  color: #9db2c8;
-  font: 12px ui-monospace, Consolas, monospace;
-}
-
-.dots {
-  display: flex;
-  gap: 6px;
-}
-
-.dots i {
-  width: 9px;
-  height: 9px;
-  background: #fa6b6b;
-  border-radius: 50%;
-}
-
-.dots i:nth-child(2) {
-  background: #f7ca60;
-}
-
-.dots i:nth-child(3) {
-  background: #6ddda5;
-}
-
-.terminal-body {
-  padding: 20px 18px;
-  font: 13px/1.8 ui-monospace,
-        SFMono-Regular, Consolas, monospace;
-  overflow-wrap: anywhere;
-}
-
-.terminal-body p {
-  margin: 0 0 5px;
-}
-
-.term-green {
-  color: #6ee7b7;
-}
-
-.term-blue {
-  color: #6dbdff;
-}
-
-.indent {
-  padding-left: 18px;
-  color: #c5d5e9;
-}
-
-.cursor {
-  color: var(--cyan);
-}
-
-/* ==========================================================
-   SEÇÕES
-   ========================================================== */
-
-.section {
-  padding: 95px 0;
-}
-
-.alt {
-  background: var(--bg2);
-  border-block: 1px solid #182940;
-}
-
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 45px;
-}
-
-/* ==========================================================
-   EXPERIÊNCIA PROFISSIONAL
-   ========================================================== */
-
-.timeline {
-  border-left: 2px solid #28486d;
-  margin-left: 10px;
-}
-
-.job {
-  display: grid;
-  grid-template-columns: 170px 1fr;
-  gap: 30px;
-  position: relative;
-  padding: 0 0 40px 30px;
-}
-
-.job:last-child {
-  padding-bottom: 0;
-}
-
-.job::before {
-  content: "";
-  position: absolute;
-  left: -7px;
-  top: 8px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--blue);
-  box-shadow: 0 0 0 5px var(--bg);
-}
-
-.job-date {
-  color: var(--cyan);
-  font-weight: 700;
-  font-size: .85rem;
-  padding-top: 4px;
-}
-
-.job h3 {
-  font-size: 1.22rem;
-  margin-bottom: 0;
-}
-
-.job-org {
-  color: var(--blue) !important;
-  font-size: .92rem;
-  margin: 2px 0 10px;
-}
-
-.job p {
-  max-width: 780px;
-}
-
-/* ==========================================================
-   COMPETÊNCIAS E CARTÕES
-   ========================================================== */
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 17px;
-}
-
-.skill,
-.panel {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 24px;
-  min-width: 0;
-}
-
-.skill:hover {
-  border-color: #3e8bcd;
-}
-
-.skill-icon {
-  font: 30px ui-monospace, monospace;
-  color: var(--cyan);
-  margin-bottom: 14px;
-}
-
-.skill h3 {
-  font-size: 1.1rem;
-}
-
-.skill p {
-  font-size: .9rem;
-}
-
-.panel h3 {
-  color: var(--cyan);
-}
-
-.panel p {
-  color: var(--muted);
-}
-
-.panel strong {
-  color: var(--text);
-}
-
-.small {
-  font-size: .78rem;
-  color: var(--muted) !important;
-  margin-top: 20px;
-}
-
-/* ==========================================================
-   CURSOS E APERFEIÇOAMENTO PROFISSIONAL
-   Layout com 2 cartões por linha
-   ========================================================== */
-
-#cursos .intro {
-  max-width: 850px;
-  margin-bottom: 32px;
-}
-
-/* Dois cartões por linha */
-
-#cursos .cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  align-items: stretch;
-}
-
-/* Aparência dos cartões */
-
-#cursos .skill {
-  min-width: 0;
-  padding: 30px 34px;
-  border-radius: 16px;
-  transition: border-color .2s ease,
-              transform .2s ease;
-}
-
-#cursos .skill:hover {
-  border-color: var(--blue);
-  transform: translateY(-3px);
-}
-
-/* Ícones */
-
-#cursos .skill-icon {
-  color: var(--cyan);
-  margin-bottom: 20px;
-}
-
-#cursos .skill-icon svg {
-  display: block;
-  width: 34px;
-  height: 34px;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  fill: none;
-}
-
-/* Títulos das áreas */
-
-#cursos .skill h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 20px;
-}
-
-/* Lista sem marcadores */
-
-#cursos .skill ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#cursos .skill li {
-  list-style: none;
-  margin: 0;
-  padding: 15px 0;
-  border-bottom: 1px solid var(--line);
-  color: var(--text);
-  font-size: .95rem;
-  line-height: 1.5;
-  overflow-wrap: normal;
-  word-break: normal;
-}
-
-#cursos .skill li::marker {
-  content: "";
-}
-
-#cursos .skill li:first-child {
-  padding-top: 0;
-}
-
-#cursos .skill li:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-/* Instituição responsável pelo curso */
-
-#cursos .skill li small {
-  display: block;
-  color: var(--muted);
-  font-size: .81rem;
-  font-weight: 400;
-  line-height: 1.5;
-  margin-top: 5px;
-}
-
-/* ==========================================================
-   CONTATO
-   ========================================================== */
-
-.contact {
-  text-align: center;
-}
-
-.contact h2 {
-  margin-inline: auto;
-}
-
-.contact .actions {
-  justify-content: center;
-}
-
-/* ==========================================================
-   RODAPÉ
-   ========================================================== */
-
-.footer {
-  padding: 24px 0;
-  color: #91a6c0;
-  font-size: .8rem;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-/* ==========================================================
-   RESPONSIVIDADE - TABLETS
-   ========================================================== */
-
-@media (max-width: 950px) {
-  .hero {
-    grid-template-columns: 1fr;
-    padding-top: 80px;
-    gap: 30px;
-  }
-
-  .terminal {
-    max-width: 640px;
-    transform: none;
-  }
-
-  .cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* ==========================================================
-   RESPONSIVIDADE - CELULARES
-   ========================================================== */
-
-@media (max-width: 700px) {
-  #cursos .cards {
-    grid-template-columns: 1fr;
-  }
-
-  #cursos .skill {
-    padding: 24px;
-  }
-}
-
-@media (max-width: 650px) {
-  .container {
-    width: min(100% - 32px, 1140px);
-  }
-
-  .nav {
-    min-height: 66px;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .menu {
-    display: none;
-    position: absolute;
-    top: 65px;
-    left: 0;
-    right: 0;
-    background: #0b1729;
-    border-bottom: 1px solid var(--line);
-    padding: 20px 25px;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .menu.open {
-    display: flex;
-  }
-
-  .hero {
-    padding-top: 65px;
-    padding-bottom: 65px;
-    min-height: auto;
-  }
-
-  .section {
-    padding: 65px 0;
-  }
-
-  .two-col,
-  .cards {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  #cursos .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .job {
-    grid-template-columns: 1fr;
-    gap: 4px;
-    padding-left: 23px;
-  }
-
-  .job-date {
-    padding: 0;
-  }
-
-  .terminal-body {
-    font-size: 11px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-  }
-}
-
-/* ==========================================================
-   ACESSIBILIDADE
-   ========================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-  }
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Portfólio profissional de Marcio Santana — Infraestrutura de TI, Segurança da Informação e Automação.">
+
+  <meta name="theme-color" content="#080f1e">
+
+  <title>Marcio Santana | Infraestrutura & Segurança</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <a class="skip" href="#conteudo">
+    Ir para o conteúdo
+  </a>
+
+  <!-- CABEÇALHO -->
+
+  <header class="header">
+    <div class="container nav">
+
+      <a class="brand" href="#inicio">
+        <span class="prompt">&gt;_</span>
+        MARCIO<span class="accent">.SANTANA</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menu">
+        ☰
+      </button>
+
+      <nav id="menu" class="menu" aria-label="Menu principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#competencias">Competências</a>
+        <a href="#certificacoes">Certificações</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- APRESENTAÇÃO -->
+
+    <section id="inicio" class="hero container">
+
+      <div class="hero-copy">
+
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          PORTFÓLIO PROFISSIONAL
+        </p>
+
+        <h1>
+          Infraestrutura crítica.
+          <br>
+          <span class="gradient">
+            Segurança e evolução tecnológica.
+          </span>
+        </h1>
+
+        <p class="lead">
+          Sou <strong>Marcio Santana</strong>,
+          Analista de Infraestrutura Sênior com mais
+          de 20 anos de trajetória em TI, atuando
+          em ambientes corporativos de alta criticidade.
+        </p>
+
+        <p class="intro">
+          Referência técnica para outros analistas,
+          participo de decisões, investigações complexas
+          e iniciativas de melhoria contínua em
+          infraestrutura Microsoft, Linux e
+          segurança da informação.
+        </p>
+
+        <div class="actions">
+
+          <a class="btn primary" href="#experiencia">
+            Conheça minha trajetória
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a
+            class="btn secondary"
+            href="curriculo.pdf"
+            id="pdf-link"
+            download>
+            Baixar currículo PDF ↓
+          </a>
+
+        </div>
+
+        <!-- TECNOLOGIAS E FERRAMENTAS -->
+
+        <div class="hero-tags">
+
+          <span>Windows Server</span>
+          <span>Linux Server</span>
+          <span>VMware</span>
+          <span>Nutanix</span>
+          <span>NetZoom</span>
+
+          <span>Active Directory</span>
+          <span>AD CS / PKI</span>
+          <span>Microsoft Entra ID</span>
+          <span>Microsoft Azure</span>
+          <span>Microsoft Intune</span>
+          <span>Microsoft 365</span>
+          <span>Microsoft SCCM</span>
+          <span>Broadcom Altiris</span>
+
+          <span>Tenable Patch Management</span>
+          <span>Splunk</span>
+          <span>Senha Segura</span>
+          <span>MFA</span>
+
+          <span>Zabbix</span>
+          <span>Grafana</span>
+          <span>Gestão de Mudanças (GMUD)</span>
+
+        </div>
+
+      </div>
+
+      <!-- TERMINAL LINUX -->
+
+      <div class="terminal" aria-label="Resumo técnico">
+
+        <div class="terminal-top">
+
+          <div class="dots">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+
+          <span>profile.sh</span>
+
+        </div>
+
+        <div class="terminal-body">
+
+          <p>
+            <span class="term-green">marcio@infra</span>:<span class="term-blue">~</span>$
+            cat profile.yaml
+          </p>
+
+          <p>
+            <span class="term-blue">role:</span>
+            Infraestrutura Sênior
+          </p>
+
+          <p>
+            <span class="term-blue">focus:</span>
+            Segurança & Resiliência
+          </p>
+
+          <p>
+            <span class="term-blue">platforms:</span>
+          </p>
+
+          <p class="indent">
+            - Microsoft / Active Directory
+          </p>
+
+          <p class="indent">
+            - Linux / Red Hat
+          </p>
+
+          <p class="indent">
+            - Virtualização / Cloud
+          </p>
+
+          <p>
+            <span class="term-blue">approach:</span>
+            Análise + Colaboração
+          </p>
+
+          <p>
+            <span class="term-green">status:</span>
+            evolução contínua
+            <span class="cursor">▌</span>
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SOBRE -->
+
+    <section id="sobre" class="section alt">
+
+      <div class="container">
+
+        <p class="eyebrow">01 / PERFIL</p>
+
+        <h2>
+          Além da operação:
+          <span class="accent">
+            visão técnica e colaboração.
+          </span>
+        </h2>
+
+        <div class="two-col">
+
+          <p>
+            Atuo na administração, sustentação e evolução
+            de ambientes híbridos, conectando disponibilidade,
+            segurança, padronização e eficiência operacional.
+
+            Minha experiência combina resolução de incidentes,
+            análise de causa raiz, gestão de mudanças e automação.
+          </p>
+
+          <p>
+            Na atuação atual junto ao ONS, sou referência técnica,
+            apoio outros profissionais e contribuo com avaliações
+            e decisões relacionadas à infraestrutura.
+
+            Busco soluções sustentáveis, documentadas e alinhadas
+            às necessidades do negócio.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+
+    <section id="experiencia" class="section">
+
+      <div class="container">
+
+        <p class="eyebrow">02 / TRAJETÓRIA</p>
+
+        <h2>Experiência profissional</h2>
+
+        <div class="timeline">
+
+          <article class="job">
+
+            <div class="job-date">2016 — Atual</div>
+
+            <div>
+              <h3>Analista de Infraestrutura Sênior</h3>
+
+              <p class="job-org">
+                ONS · atuação por empresas prestadoras de serviços
+              </p>
+
+              <p>
+                Infraestrutura híbrida Microsoft/Linux,
+                Active Directory, serviços de identidade,
+                PKI, virtualização, gestão de atualizações,
+                observabilidade, hardening, troubleshooting
+                e automação.
+
+                Apoio técnico à equipe e participação em decisões.
+              </p>
+            </div>
+
+          </article>
+
+          <article class="job">
+
+            <div class="job-date">2015 — 2016</div>
+
+            <div>
+              <h3>Analista de Segurança da Informação</h3>
+
+              <p class="job-org">CPRH</p>
+
+              <p>
+                Atuação em atividades de segurança da informação
+                e suporte à proteção do ambiente corporativo.
+              </p>
+            </div>
+
+          </article>
+
+          <article class="job">
+
+            <div class="job-date">2014 — 2015</div>
+
+            <div>
+              <h3>Atuação em Segurança da Informação</h3>
+
+              <p class="job-org">
+                Agência de Fomento de Pernambuco
+              </p>
+
+              <p>
+                Experiência em controles e operações
+                de segurança em ambiente corporativo.
+              </p>
+            </div>
+
+          </article>
+
+          <article class="job">
+
+            <div class="job-date">2013 — 2014</div>
+
+            <div>
+              <h3>Analista de Infraestrutura Microsoft</h3>
+
+              <p class="job-org">SENAI</p>
+
+              <p>
+                Administração e suporte à infraestrutura Microsoft.
+              </p>
+            </div>
+
+          </article>
+
+          <article class="job">
+
+            <div class="job-date">2003 — 2013</div>
+
+            <div>
+              <h3>Trajetória em TI e Coordenação</h3>
+
+              <p class="job-org">CSU.Contact</p>
+
+              <p>
+                Evolução profissional em operações,
+                infraestrutura, telecomunicações
+                e coordenação de TI.
+              </p>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- COMPETÊNCIAS -->
+
+    <section id="competencias" class="section alt">
+
+      <div class="container">
+
+        <p class="eyebrow">03 / STACK</p>
+
+        <h2>Competências técnicas</h2>
+
+        <div class="cards">
+
+          <article class="skill">
+
+            <div class="skill-icon">⌘</div>
+
+            <h3>Microsoft & Identidade</h3>
+
+            <p>
+              Windows Server, Active Directory, DNS,
+              GPO, Entra ID, Microsoft 365 e PKI.
+            </p>
+
+          </article>
+
+          <article class="skill">
+
+            <div class="skill-icon">$</div>
+
+            <h3>Linux & Automação</h3>
+
+            <p>
+              Red Hat Enterprise Linux, autenticação integrada,
+              shell scripting, PowerShell e Ansible.
+            </p>
+
+          </article>
+
+          <article class="skill">
+
+            <div class="skill-icon">◇</div>
+
+            <h3>Segurança</h3>
+
+            <p>
+              Hardening, gestão de vulnerabilidades,
+              patch management, controles de acesso
+              e análise de incidentes.
+            </p>
+
+          </article>
+
+          <article class="skill">
+
+            <div class="skill-icon">▣</div>
+
+            <h3>Plataformas & Operações</h3>
+
+            <p>
+              VMware, Citrix, SCCM, observabilidade,
+              monitoramento e troubleshooting
+              de ambientes críticos.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FORMAÇÃO E CERTIFICAÇÕES -->
+
+    <section id="certificacoes" class="section">
+
+      <div class="container">
+
+        <p class="eyebrow">04 / FORMAÇÃO</p>
+
+        <h2>Formação e certificações</h2>
+
+        <div class="two-col">
+
+          <div class="panel">
+
+            <h3>Formação acadêmica</h3>
+
+            <p>
+              <strong>
+                Pós-graduação em Segurança de Redes de Computadores
+              </strong>
+              <br>
+              Estácio de Sá
+            </p>
+
+            <p>
+              <strong>
+                Gerenciamento de Redes de Computadores
+              </strong>
+              <br>
+              FAPE
+            </p>
+
+          </div>
+
+          <div class="panel">
+
+            <h3>Certificações e credenciais</h3>
+
+            <div class="chips">
+
+              <span>LPIC-2</span>
+              <span>LPIC-1</span>
+              <span>MS-900</span>
+              <span>AZ-900</span>
+              <span>SC-900</span>
+              <span>AZ-800 / AZ-801*</span>
+              <span>SC-200</span>
+              <span>ITIL 4</span>
+              <span>ISO/IEC 27002</span>
+              <span>ISO/IEC 20000</span>
+              <span>HDI</span>
+              <span>KCS V6.0</span>
+
+            </div>
+
+            <p class="small">
+              * Confirmar a situação da certificação
+              AZ-800 / AZ-801.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CURSOS -->
+
+    <section id="cursos" class="section alt">
+
+      <div class="container">
+
+        <p class="eyebrow">
+          05 / DESENVOLVIMENTO PROFISSIONAL
+        </p>
+
+        <h2>
+          Cursos e
+          <span class="accent">
+            aperfeiçoamento profissional.
+          </span>
+        </h2>
+
+        <p class="intro">
+          Capacitação contínua em segurança da informação,
+          infraestrutura, tecnologias Microsoft
+          e gestão de serviços de TI.
+        </p>
+
+        <div class="cards">
+
+          <!-- SEGURANÇA DA INFORMAÇÃO -->
+
+          <article class="skill">
+
+            <div class="skill-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.8"
+                   stroke-linecap="round"
+                   stroke-linejoin="round">
+
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                <path d="m9 12 2 2 4-4"/>
+
+              </svg>
+            </div>
+
+            <h3>Segurança da Informação</h3>
+
+            <ul>
+
+              <li>
+                SC-200 — Security Operations Analyst
+                <small>Green Tecnologia</small>
+              </li>
+
+              <li>
+                SC-100 — Microsoft Cybersecurity Architect
+                <small>Green Tecnologia</small>
+              </li>
+
+              <li>
+                Cybersecurity Essentials
+                <small>Cisco Networking Academy</small>
+              </li>
+
+              <li>
+                ISO 27002 Foundation
+                <small>TI.exames</small>
+              </li>
+
+            </ul>
+
+          </article>
+
+          <!-- MICROSOFT E INFRAESTRUTURA -->
+
+          <article class="skill">
+
+            <div class="skill-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.8"
+                   stroke-linecap="round"
+                   stroke-linejoin="round">
+
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+
+              </svg>
+            </div>
+
+            <h3>Microsoft e Infraestrutura</h3>
+
+            <ul>
+
+              <li>
+                MS-900 — Microsoft 365 Fundamentals
+                <small>Ka Solutions</small>
+              </li>
+
+              <li>
+                AZ-900 — Microsoft Azure Fundamentals
+                <small>Ka Solutions</small>
+              </li>
+
+              <li>
+                SC-900 — Security, Compliance and Identity Fundamentals
+                <small>Ka Solutions</small>
+              </li>
+
+              <li>
+                AZ-800 e AZ-801 — Windows Server Hybrid Administrator
+                <small>Green Tecnologia</small>
+              </li>
+
+              <li>
+                Zabbix 4.0 Essentials e Planejamento de Capacidade
+                <small>Unirede</small>
+              </li>
+
+            </ul>
+
+          </article>
+
+          <!-- GESTÃO E GOVERNANÇA -->
+
+          <article class="skill">
+
+            <div class="skill-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.8"
+                   stroke-linecap="round"
+                   stroke-linejoin="round">
+
+                <rect x="8" y="3" width="13" height="18" rx="2"/>
+                <path d="M16 3v4h5M11 13l2 2 4-4"/>
+
+              </svg>
+            </div>
+
+            <h3>Gestão e Governança</h3>
+
+            <ul>
+
+              <li>
+                Fundamentos no Gerenciamento de Serviços de TI
+                com base na ITIL 4
+                <small>Green Tecnologia</small>
+              </li>
+
+              <li>
+                Fundamentos de Gerenciamento de Serviços de TI
+                baseado na ISO/IEC 20000-1:2011
+                <small>TI.exames</small>
+              </li>
+
+              <li>
+                Gestão de Continuidade de Negócios
+                com base na ISO 22301
+                <small>PMG Academy</small>
+              </li>
+
+            </ul>
+
+          </article>
+
+          <!-- LIDERANÇA E ATENDIMENTO -->
+
+          <article class="skill">
+
+            <div class="skill-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="1.8"
+                   stroke-linecap="round"
+                   stroke-linejoin="round">
+
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+
+              </svg>
+            </div>
+
+            <h3>Liderança e Atendimento</h3>
+
+            <ul>
+
+              <li>
+                SCTL — Support Center Team Lead
+                <small>HDI Brasil</small>
+              </li>
+
+              <li>
+                Vacine-se Contra o Atendimento Normal
+                <small>Sergio Almeida</small>
+              </li>
+
+            </ul>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTATO -->
+
+    <section id="contato" class="section contact alt">
+
+      <div class="container">
+
+        <p class="eyebrow">06 / CONTATO</p>
+
+        <h2>
+          Vamos conversar sobre
+          <span class="accent">tecnologia?</span>
+        </h2>
+
+        <p>
+          Infraestrutura, segurança da informação,
+          automação e troca de experiências profissionais.
+        </p>
+
+        <div class="actions">
+
+          <a
+            class="btn primary"
+            id="linkedin-link"
+            href="https://www.linkedin.com/in/marciogfsantana/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Meu LinkedIn ↗
+          </a>
+
+          <a
+            class="btn secondary"
+            id="email-link"
+            href="mailto:marcio5903@gmail.com">
+            Enviar e-mail ✉
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <span>
+        © <span id="year"></span> Marcio Santana
+      </span>
+
+      <span>
+        Construído com HTML, CSS e JavaScript · GitHub Pages
+      </span>
+
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
