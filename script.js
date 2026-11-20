@@ -1,6 +1,6 @@
 // CONFIGURE AQUI OS SEUS LINKS ANTES DE PUBLICAR.
 const CONFIG = {
-  linkedin: 'https://www.linkedin.com/', // Substituir pela URL exata do perfil
+  linkedin: 'www.linkedin.com/in/marciogfsantana', // Substituir pela URL exata do perfil
   email: 'marcio5903@gmail.com'           // Substituir pelo e-mail profissional
 };
 
