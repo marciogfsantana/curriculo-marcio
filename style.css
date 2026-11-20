@@ -1,10 +1,10 @@
 
-/* ============================================
-   CURRÍCULO ONLINE — MARCIO SANTANA
-   CSS COMPLETO — DESKTOP E MOBILE
-   ============================================ */
+/* ==================================================
+   PORTFÓLIO PROFISSIONAL — MARCIO SANTANA
+   VERSÃO 2 — CSS COMPLETO
+   ================================================== */
 
-/* CORES E CONFIGURAÇÕES GERAIS */
+/* CORES E CONFIGURAÇÕES */
 
 :root {
   --bg: #080f1e;
@@ -40,8 +40,13 @@ a {
   text-decoration: none;
 }
 
+button {
+  font: inherit;
+}
+
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+summary:focus-visible {
   outline: 3px solid var(--cyan);
   outline-offset: 4px;
 }
@@ -55,113 +60,14 @@ button:focus-visible {
   position: absolute;
   top: -80px;
   left: 10px;
+  z-index: 30;
+  padding: 10px;
   background: white;
   color: black;
-  padding: 10px;
-  z-index: 30;
 }
 
 .skip:focus {
   top: 10px;
-}
-
-/* ============================================
-   CABEÇALHO E NAVEGAÇÃO
-   ============================================ */
-
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: #080f1eea;
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
-}
-
-.nav {
-  min-height: 74px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.brand {
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  font-size: 28px;
-  white-space: nowrap;
-}
-
-.prompt,
-.accent {
-  color: var(--blue);
-}
-
-.prompt {
-  margin-right: 8px;
-}
-
-.menu {
-  display: flex;
-  gap: 25px;
-}
-
-.menu a {
-  font-size: .89rem;
-  color: var(--muted);
-}
-
-.menu a:hover {
-  color: var(--cyan);
-}
-
-.menu-toggle {
-  display: none;
-  background: none;
-  color: white;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 5px 11px;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-/* ============================================
-   APRESENTAÇÃO PRINCIPAL
-   ============================================ */
-
-.hero {
-  min-height: 650px;
-  padding-top: 115px;
-  padding-bottom: 105px;
-  display: grid;
-  grid-template-columns:
-    minmax(0, 1.2fr) minmax(0, .8fr);
-  align-items: center;
-  gap: 60px;
-}
-
-.hero-copy {
-  min-width: 0;
-}
-
-.eyebrow {
-  color: var(--cyan);
-  font-size: .75rem;
-  font-weight: 800;
-  letter-spacing: .18em;
-  margin: 0 0 20px;
-}
-
-.status-dot {
-  display: inline-block;
-  background: var(--green);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  margin-right: 8px;
-  box-shadow: 0 0 14px var(--green);
 }
 
 h1,
@@ -171,21 +77,124 @@ p {
   margin-top: 0;
 }
 
-/* TÍTULO PRINCIPAL — 50% MENOR */
-
-h1 {
-  font-size: clamp(1.175rem, 2.15vw, 2.3rem);
-  line-height: 1.3;
-  letter-spacing: -0.025em;
-  margin-bottom: 28px;
+.accent,
+.prompt {
+  color: var(--blue);
 }
 
-h2 {
-  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
-  line-height: 1.2;
-  letter-spacing: -.035em;
-  margin-bottom: 30px;
-  max-width: 750px;
+/* ==================================================
+   CABEÇALHO
+   ================================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #080f1ef2;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.prompt {
+  margin-right: 10px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.menu a {
+  color: var(--muted);
+  font-size: 0.81rem;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.menu a:hover {
+  color: var(--cyan);
+}
+
+.menu-toggle {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text);
+  font-size: 23px;
+  cursor: pointer;
+}
+
+/* ==================================================
+   APRESENTAÇÃO PRINCIPAL
+   ================================================== */
+
+.hero {
+  min-height: 630px;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: 55px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  color: var(--cyan);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 14px var(--green);
+}
+
+.role {
+  margin-bottom: 14px;
+  color: var(--cyan);
+  font-size: 0.82rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+}
+
+.hero h1 {
+  max-width: 700px;
+  margin-bottom: 24px;
+  font-size: clamp(1.8rem, 3.1vw, 3.15rem);
+  line-height: 1.17;
+  letter-spacing: -0.04em;
 }
 
 .gradient {
@@ -194,28 +203,21 @@ h2 {
     var(--blue),
     var(--cyan)
   );
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
 .lead {
-  font-size: 1.12rem;
-  color: #d2def0;
-  line-height: 1.7;
+  max-width: 650px;
+  color: #c5d4e9;
+  font-size: 1.03rem;
+  line-height: 1.8;
 }
 
-.intro,
-.two-col p,
-.job p,
-.skill p,
-.contact p {
-  color: var(--muted);
-}
-
-/* ============================================
+/* ==================================================
    BOTÕES
-   ============================================ */
+   ================================================== */
 
 .actions {
   display: flex;
@@ -229,41 +231,47 @@ h2 {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  padding: 12px 19px;
   border: 1px solid var(--line);
   border-radius: 9px;
-  padding: 12px 19px;
+  font-size: 0.91rem;
   font-weight: 700;
-  font-size: .91rem;
+  line-height: 1.4;
+  text-align: center;
   transition:
-    transform .2s,
-    background .2s;
+    transform 0.2s,
+    background 0.2s,
+    border-color 0.2s;
 }
 
 .btn:hover {
   transform: translateY(-2px);
 }
 
+.btn.primary,
 .primary {
   background: #268ce7;
   border-color: #268ce7;
   color: white;
 }
 
-.primary:hover {
+.btn.primary:hover {
   background: #1477cf;
 }
 
+.btn.secondary,
 .secondary {
   background: #111e32;
 }
 
-.secondary:hover {
+.btn.secondary:hover {
   background: #1b2d48;
+  border-color: #3e638c;
 }
 
-/* ============================================
-   TECNOLOGIAS E CERTIFICAÇÕES
-   ============================================ */
+/* ==================================================
+   ETIQUETAS DE TECNOLOGIAS
+   ================================================== */
 
 .hero-tags,
 .chips {
@@ -273,37 +281,35 @@ h2 {
 }
 
 .hero-tags {
-  margin-top: 24px;
-  max-width: 100%;
+  margin-top: 25px;
 }
 
 .hero-tags span,
 .chips span {
-  border: 1px solid var(--line);
-  background: #102039;
-  border-radius: 30px;
-  padding: 5px 12px;
-  color: #b9cce4;
-  font-size: .77rem;
-}
-
-.hero-tags span {
   display: inline-flex;
   align-items: center;
-  white-space: nowrap;
   padding: 6px 13px;
+  border: 1px solid #29415f;
+  border-radius: 30px;
+  background: #102039;
+  color: #c5d8ed;
+  font-size: 0.78rem;
   line-height: 1.5;
 }
 
-/* ============================================
+.hero-tags span {
+  white-space: nowrap;
+}
+
+/* ==================================================
    TERMINAL LINUX
-   ============================================ */
+   ================================================== */
 
 .terminal {
   min-width: 0;
+  overflow: hidden;
   border: 1px solid #315174;
   border-radius: 14px;
-  overflow: hidden;
   background: #091426;
   box-shadow:
     0 25px 80px #0008,
@@ -312,12 +318,12 @@ h2 {
 }
 
 .terminal-top {
-  background: #17283e;
-  border-bottom: 1px solid #2d4059;
-  padding: 10px 16px;
   display: flex;
   align-items: center;
   gap: 25px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #2d4059;
+  background: #17283e;
   color: #9db2c8;
   font: 12px ui-monospace, Consolas, monospace;
 }
@@ -330,8 +336,8 @@ h2 {
 .dots i {
   width: 9px;
   height: 9px;
-  background: #fa6b6b;
   border-radius: 50%;
+  background: #fa6b6b;
 }
 
 .dots i:nth-child(2) {
@@ -344,7 +350,7 @@ h2 {
 
 .terminal-body {
   padding: 20px 18px;
-  font: 13px/1.8 ui-monospace,
+  font: 12px/1.85 ui-monospace,
         SFMono-Regular, Consolas, monospace;
   overflow-wrap: anywhere;
 }
@@ -370,17 +376,36 @@ h2 {
   color: var(--cyan);
 }
 
-/* ============================================
-   SEÇÕES
-   ============================================ */
+/* ==================================================
+   SEÇÕES E TÍTULOS
+   ================================================== */
 
 .section {
-  padding: 95px 0;
+  padding: 90px 0;
 }
 
 .alt {
   background: var(--bg2);
   border-block: 1px solid #182940;
+}
+
+h2 {
+  max-width: 800px;
+  margin-bottom: 28px;
+  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+h3 {
+  line-height: 1.35;
+}
+
+.section-intro {
+  max-width: 800px;
+  margin-bottom: 32px;
+  color: var(--muted);
+  font-size: 1rem;
 }
 
 .two-col {
@@ -390,13 +415,188 @@ h2 {
   gap: 45px;
 }
 
-/* ============================================
-   EXPERIÊNCIA PROFISSIONAL
-   ============================================ */
+.two-col p {
+  color: var(--muted);
+}
+
+/* ==================================================
+   ESPECIALIDADES E CARTÕES
+   ================================================== */
+
+.cards {
+  display: grid;
+  gap: 18px;
+}
+
+.cards.four {
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+}
+
+.cards.three {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+}
+
+.cards.two {
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+}
+
+.skill,
+.panel,
+.project {
+  min-width: 0;
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.skill,
+.project {
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.skill:hover,
+.project:hover {
+  border-color: #3e8bcd;
+  transform: translateY(-2px);
+}
+
+.skill h3 {
+  margin-bottom: 17px;
+  font-size: 1.07rem;
+}
+
+.skill p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.skill-icon {
+  display: flex;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 20px;
+  color: var(--cyan);
+}
+
+.skill-icon svg {
+  display: block;
+  width: 36px;
+  height: 36px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ==================================================
+   PROJETOS E ESTUDOS DE CASO
+   ================================================== */
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  margin-bottom: 12px;
+}
+
+.section-heading .section-intro {
+  margin-bottom: 0;
+}
+
+.section-heading > .btn {
+  flex-shrink: 0;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+}
+
+.project-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  margin-bottom: 20px;
+  border: 1px solid #294d72;
+  border-radius: 12px;
+  background: #102944;
+  color: var(--cyan);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.project h3 {
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+}
+
+.project-tag {
+  margin-bottom: 17px;
+  color: var(--cyan);
+  font-size: 0.77rem;
+  font-weight: 650;
+}
+
+.project > p:not(.project-tag) {
+  color: var(--muted);
+  font-size: 0.91rem;
+}
+
+.project details {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.project summary {
+  color: var(--blue);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.project summary:hover {
+  color: var(--cyan);
+}
+
+.project-detail {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #0a1729;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.8;
+}
+
+.project-detail strong {
+  color: var(--text);
+}
+
+/* ==================================================
+   TRAJETÓRIA PROFISSIONAL
+   ================================================== */
 
 .timeline {
-  border-left: 2px solid #28486d;
   margin-left: 10px;
+  border-left: 2px solid #28486d;
 }
 
 .job {
@@ -415,8 +615,8 @@ h2 {
 .job::before {
   content: "";
   position: absolute;
-  left: -7px;
   top: 8px;
+  left: -7px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -425,66 +625,34 @@ h2 {
 }
 
 .job-date {
-  color: var(--cyan);
-  font-weight: 700;
-  font-size: .85rem;
   padding-top: 4px;
+  color: var(--cyan);
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 
 .job h3 {
-  font-size: 1.22rem;
   margin-bottom: 0;
+  font-size: 1.22rem;
 }
 
 .job-org {
-  color: var(--blue) !important;
-  font-size: .92rem;
   margin: 2px 0 10px;
+  color: var(--blue);
+  font-size: 0.92rem;
 }
 
-.job p {
+.job p:not(.job-org) {
   max-width: 780px;
+  color: var(--muted);
 }
 
-/* ============================================
-   CARTÕES
-   ============================================ */
-
-.cards {
-  display: grid;
-  grid-template-columns:
-    repeat(4, minmax(0, 1fr));
-  gap: 17px;
-}
-
-.skill,
-.panel {
-  min-width: 0;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 24px;
-}
-
-.skill:hover {
-  border-color: #3e8bcd;
-}
-
-.skill-icon {
-  font: 30px ui-monospace, monospace;
-  color: var(--cyan);
-  margin-bottom: 14px;
-}
-
-.skill h3 {
-  font-size: 1.1rem;
-}
-
-.skill p {
-  font-size: .9rem;
-}
+/* ==================================================
+   FORMAÇÃO E CERTIFICAÇÕES
+   ================================================== */
 
 .panel h3 {
+  margin-bottom: 20px;
   color: var(--cyan);
 }
 
@@ -496,222 +664,172 @@ h2 {
   color: var(--text);
 }
 
+.panel .chips {
+  margin-bottom: 15px;
+}
+
 .small {
-  font-size: .78rem;
-  color: var(--muted) !important;
   margin-top: 20px;
+  color: var(--muted);
+  font-size: 0.78rem;
 }
 
-/* ============================================
-   COMPETÊNCIAS TÉCNICAS
-   ÍCONES — 36 x 36 PIXELS
-   ============================================ */
+/* ==================================================
+   CURSOS
+   ================================================== */
 
-#competencias .skill-icon {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 42px;
-  height: 42px;
-  margin-bottom: 22px;
-  color: var(--cyan);
-}
-
-#competencias .skill-icon svg {
-  display: block;
-  width: 36px !important;
-  height: 36px !important;
-  min-width: 36px;
-  min-height: 36px;
-  max-width: 36px;
-  max-height: 36px;
-  flex-shrink: 0;
-  stroke: currentColor;
-  fill: none;
-}
-
-/* ============================================
-   CURSOS E APERFEIÇOAMENTO
-   ============================================ */
-
-#cursos .intro {
-  max-width: 850px;
-  margin-bottom: 32px;
-}
-
-#cursos .cards {
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  align-items: stretch;
-}
-
-#cursos .skill {
+.course {
   padding: 30px 34px;
-  border-radius: 16px;
-  transition:
-    border-color .2s,
-    transform .2s;
 }
 
-#cursos .skill:hover {
-  border-color: var(--blue);
-  transform: translateY(-3px);
+.course h3 {
+  margin-bottom: 22px;
+  color: var(--text);
+  font-size: 1.17rem;
 }
 
-#cursos .skill-icon {
-  color: var(--cyan);
-  margin-bottom: 20px;
-}
-
-#cursos .skill-icon svg {
-  display: block;
-  width: 34px;
-  height: 34px;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  fill: none;
-}
-
-#cursos .skill h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 20px;
-}
-
-/* LISTA DE CURSOS SEM MARCADORES */
-
-#cursos .skill ul {
-  list-style: none;
+.course ul {
+  margin: 0;
   padding: 0;
-  margin: 0;
+  list-style: none;
 }
 
-#cursos .skill li {
-  list-style: none;
-  margin: 0;
+.course li {
   padding: 15px 0;
   border-bottom: 1px solid var(--line);
   color: var(--text);
-  font-size: .95rem;
+  font-size: 0.94rem;
   line-height: 1.5;
-  overflow-wrap: normal;
-  word-break: normal;
 }
 
-#cursos .skill li::marker {
-  content: "";
-}
-
-#cursos .skill li:first-child {
+.course li:first-child {
   padding-top: 0;
 }
 
-#cursos .skill li:last-child {
-  border-bottom: none;
+.course li:last-child {
   padding-bottom: 0;
+  border-bottom: none;
 }
 
-#cursos .skill li small {
+.course li small {
   display: block;
-  color: var(--muted);
-  font-size: .81rem;
-  font-weight: 400;
-  line-height: 1.5;
   margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.81rem;
+  line-height: 1.5;
 }
 
-/* ============================================
-   CONTATO E RODAPÉ
-   ============================================ */
+/* ==================================================
+   CONTATO
+   ================================================== */
 
-.contact {
-  text-align: center;
+.contact-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
 }
 
-.contact h2 {
-  margin-inline: auto;
+.contact-panel > div:first-child {
+  max-width: 700px;
 }
 
-.contact .actions {
-  justify-content: center;
+.contact-panel h2 {
+  margin-bottom: 18px;
 }
+
+.contact-panel p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.contact-panel .actions {
+  flex-shrink: 0;
+  flex-direction: column;
+}
+
+/* ==================================================
+   RODAPÉ
+   ================================================== */
 
 .footer {
-  padding: 24px 0;
+  padding: 25px 0;
   color: #91a6c0;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .footer-inner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 15px;
   flex-wrap: wrap;
 }
 
-/* ============================================
-   RESPONSIVIDADE — TABLETS
-   ============================================ */
+/* ==================================================
+   TABLETS E TELAS INTERMEDIÁRIAS
+   ================================================== */
+
+@media (max-width: 1100px) {
+
+  .brand {
+    font-size: 23px;
+  }
+
+  .menu {
+    gap: 12px;
+  }
+
+  .menu a {
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    gap: 35px;
+  }
+
+  .cards.four {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
 
 @media (max-width: 950px) {
 
   .hero {
     grid-template-columns: 1fr;
-    padding-top: 80px;
-    gap: 30px;
+    min-height: auto;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    gap: 35px;
   }
 
   .terminal {
-    max-width: 640px;
+    max-width: 650px;
     transform: none;
   }
 
-  .cards {
+  .cards.three {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
   }
 
-  .header .brand {
-    font-size: 24px;
+  .contact-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contact-panel .actions {
+    flex-direction: row;
+    margin-top: 0;
   }
 
 }
 
-/* ============================================
-   RESPONSIVIDADE — CELULARES
-   ============================================ */
-
-@media (max-width: 700px) {
-
-  #cursos .cards {
-    grid-template-columns: 1fr;
-  }
-
-  #cursos .skill {
-    padding: 24px;
-  }
-
-}
-
-@media (max-width: 650px) {
-
-  .container {
-    width: min(100% - 32px, 1140px);
-  }
+@media (max-width: 800px) {
 
   .nav {
-    min-height: 66px;
-    gap: 10px;
-  }
-
-  /* NOME MAIOR NO CELULAR */
-
-  .header .brand {
-    font-size: 23px;
-    letter-spacing: 0;
-    white-space: nowrap;
+    min-height: 68px;
   }
 
   .menu-toggle {
@@ -722,63 +840,76 @@ h2 {
   .menu {
     display: none;
     position: absolute;
-    top: 65px;
+    top: 100%;
     left: 0;
     right: 0;
-    background: #0b1729;
-    border-bottom: 1px solid var(--line);
     padding: 20px 25px;
+    border-bottom: 1px solid var(--line);
+    background: #0b1729;
     flex-direction: column;
-    gap: 16px;
+    align-items: stretch;
+    gap: 15px;
   }
 
   .menu.open {
     display: flex;
   }
 
-  .hero {
-    padding-top: 65px;
-    padding-bottom: 65px;
-    min-height: auto;
+  .menu a {
+    font-size: 0.94rem;
   }
 
-  /* TÍTULO PRINCIPAL MENOR NO CELULAR */
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+}
+
+/* ==================================================
+   CELULARES
+   ================================================== */
+
+@media (max-width: 650px) {
+
+  .container {
+    width: min(100% - 32px, 1140px);
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .brand {
+    font-size: 22px;
+    letter-spacing: 0;
+  }
+
+  .prompt {
+    margin-right: 7px;
+  }
+
+  .hero {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 35px;
+  }
 
   .hero h1 {
-    font-size: clamp(1.175rem, 4.5vw, 1.5rem);
-    line-height: 1.35;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.8rem, 7vw, 2.35rem);
+    line-height: 1.22;
   }
 
-  .section {
-    padding: 65px 0;
+  .role {
+    font-size: 0.7rem;
+    letter-spacing: 0.09em;
   }
 
-  .two-col,
-  .cards {
-    grid-template-columns: 1fr;
-    gap: 18px;
+  .lead {
+    font-size: 1rem;
   }
 
-  #cursos .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .job {
-    grid-template-columns: 1fr;
-    gap: 4px;
-    padding-left: 23px;
-  }
-
-  .job-date {
-    padding: 0;
-  }
-
-  .terminal-body {
-    font-size: 11px;
-  }
-
-  .footer-inner {
+  .actions {
     flex-direction: column;
   }
 
@@ -791,11 +922,61 @@ h2 {
   }
 
   .hero-tags span {
-    font-size: .72rem;
     padding: 5px 10px;
+    font-size: 0.72rem;
   }
 
-  /* SEÇÃO SOBRE — MENOS ESPAÇO VERTICAL */
+  .terminal-body {
+    font-size: 11px;
+  }
+
+  .section {
+    padding: 65px 0;
+  }
+
+  h2 {
+    font-size: clamp(1.7rem, 6vw, 2.15rem);
+  }
+
+  .two-col,
+  .cards.four,
+  .cards.three,
+  .cards.two {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .skill,
+  .panel,
+  .project {
+    padding: 24px;
+  }
+
+  .course {
+    padding: 24px;
+  }
+
+  .job {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding-left: 23px;
+  }
+
+  .job-date {
+    padding-top: 0;
+  }
+
+  .contact-panel .actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* SOBRE — ESPAÇAMENTO MAIS COMPACTO */
 
   #sobre {
     padding-top: 52px;
@@ -816,21 +997,21 @@ h2 {
 
 }
 
-/* ============================================
-   CELULARES COM TELAS MENORES
-   ============================================ */
+@media (max-width: 380px) {
 
-@media (max-width: 360px) {
+  .brand {
+    font-size: 19px;
+  }
 
-  .header .brand {
-    font-size: 20px;
+  .hero h1 {
+    font-size: 1.7rem;
   }
 
 }
 
-/* ============================================
+/* ==================================================
    ACESSIBILIDADE
-   ============================================ */
+   ================================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -842,6 +1023,7 @@ h2 {
   *::before,
   *::after {
     transition: none !important;
+    scroll-behavior: auto !important;
   }
 
 }
