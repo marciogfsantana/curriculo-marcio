@@ -1,14 +1,7 @@
 
-// ==================================================
-// PORTFÓLIO PROFISSIONAL — MARCIO SANTANA
-// VERSÃO 2 — JAVASCRIPT COMPLETO
-// ==================================================
+// PORTFÓLIO MARCIO SANTANA — V3
 
 "use strict";
-
-// ==================================================
-// CONFIGURAÇÕES
-// ==================================================
 
 const CONFIG = {
   linkedin: "https://www.linkedin.com/in/marciogfsantana/",
@@ -16,100 +9,62 @@ const CONFIG = {
   curriculo: "curriculo.pdf"
 };
 
-// ==================================================
-// INICIALIZAÇÃO
-// ==================================================
-
 document.addEventListener("DOMContentLoaded", () => {
-  configurarMenu();
-  configurarContatos();
-  configurarCurriculo();
-  atualizarAno();
-});
 
-// ==================================================
-// MENU RESPONSIVO
-// ==================================================
+  // MENU RESPONSIVO
 
-function configurarMenu() {
   const botao = document.querySelector(".menu-toggle");
   const menu = document.querySelector("#menu");
 
-  if (!botao || !menu) {
-    return;
-  }
+  if (botao && menu) {
 
-  function fecharMenu() {
-    menu.classList.remove("open");
+    const fechar = () => {
+      menu.classList.remove("open");
+      botao.setAttribute("aria-expanded", "false");
+      botao.setAttribute("aria-label", "Abrir menu");
+      botao.textContent = "☰";
+    };
 
-    botao.setAttribute("aria-expanded", "false");
-    botao.setAttribute("aria-label", "Abrir menu");
-
-    botao.textContent = "☰";
-  }
-
-  function abrirMenu() {
-    menu.classList.add("open");
-
-    botao.setAttribute("aria-expanded", "true");
-    botao.setAttribute("aria-label", "Fechar menu");
-
-    botao.textContent = "✕";
-  }
-
-  botao.addEventListener("click", () => {
-    const aberto = menu.classList.contains("open");
-
-    if (aberto) {
-      fecharMenu();
-    } else {
-      abrirMenu();
-    }
-  });
-
-  // Fecha o menu ao selecionar uma seção.
-
-  menu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      fecharMenu();
+    botao.addEventListener("click", () => {
+      if (menu.classList.contains("open")) {
+        fechar();
+      } else {
+        menu.classList.add("open");
+        botao.setAttribute("aria-expanded", "true");
+        botao.setAttribute("aria-label", "Fechar menu");
+        botao.textContent = "✕";
+      }
     });
-  });
 
-  // Fecha o menu ao pressionar ESC.
+    menu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", fechar);
+    });
 
-  document.addEventListener("keydown", (evento) => {
-    if (evento.key === "Escape") {
-      fecharMenu();
-    }
-  });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        fechar();
+      }
+    });
 
-  // Fecha o menu ao clicar fora dele.
+    document.addEventListener("click", event => {
+      if (
+        !menu.contains(event.target) &&
+        !botao.contains(event.target)
+      ) {
+        fechar();
+      }
+    });
 
-  document.addEventListener("click", (evento) => {
-    const clicouNoMenu = menu.contains(evento.target);
-    const clicouNoBotao = botao.contains(evento.target);
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 800) {
+        fechar();
+      }
+    });
+  }
 
-    if (!clicouNoMenu && !clicouNoBotao) {
-      fecharMenu();
-    }
-  });
+  // LINKEDIN
 
-  // Ajusta o menu ao mudar o tamanho da tela.
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 800) {
-      fecharMenu();
-    }
-  });
-}
-
-// ==================================================
-// LINKEDIN E E-MAIL
-// ==================================================
-
-function configurarContatos() {
   const linkedin = document.querySelector("#linkedin-link");
-  const email = document.querySelector("#email-link");
 
   if (linkedin) {
     linkedin.href = CONFIG.linkedin;
@@ -117,70 +72,28 @@ function configurarContatos() {
     linkedin.rel = "noopener noreferrer";
   }
 
+  // E-MAIL
+
+  const email = document.querySelector("#email-link");
+
   if (email) {
     email.href = `mailto:${CONFIG.email}`;
   }
-}
 
-// ==================================================
-// CURRÍCULO PDF
-// ==================================================
+  // CURRÍCULO PDF
 
-async function configurarCurriculo() {
-  const botaoPDF = document.querySelector("#pdf-link");
+  const pdf = document.querySelector("#pdf-link");
 
-  if (!botaoPDF) {
-    return;
+  if (pdf) {
+    pdf.href = CONFIG.curriculo;
   }
 
-  botaoPDF.href = CONFIG.curriculo;
-  botaoPDF.setAttribute("download", "");
+  // ANO AUTOMÁTICO
 
-  // Verifica se o arquivo existe no GitHub Pages.
+  const year = document.querySelector("#year");
 
-  try {
-    const resposta = await fetch(CONFIG.curriculo, {
-      method: "HEAD",
-      cache: "no-store"
-    });
-
-    if (resposta.status === 404) {
-      botaoPDF.removeAttribute("download");
-      botaoPDF.removeAttribute("href");
-
-      botaoPDF.setAttribute("aria-disabled", "true");
-      botaoPDF.setAttribute(
-        "title",
-        "Currículo PDF indisponível no momento"
-      );
-
-      botaoPDF.style.opacity = "0.5";
-      botaoPDF.style.cursor = "not-allowed";
-
-      botaoPDF.addEventListener("click", (evento) => {
-        evento.preventDefault();
-      });
-    }
-
-  } catch (erro) {
-    // Se a verificação falhar por conexão ou bloqueio,
-    // mantém o link disponível para tentativa manual.
-
-    console.warn(
-      "Não foi possível verificar o currículo PDF:",
-      erro
-    );
+  if (year) {
+    year.textContent = new Date().getFullYear();
   }
-}
 
-// ==================================================
-// ANO AUTOMÁTICO NO RODAPÉ
-// ==================================================
-
-function atualizarAno() {
-  const elementoAno = document.querySelector("#year");
-
-  if (elementoAno) {
-    elementoAno.textContent = new Date().getFullYear();
-  }
-}
+});
