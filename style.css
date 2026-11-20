@@ -1,4 +1,9 @@
 
+/* ==========================================================
+   CURRÍCULO ONLINE — MARCIO SANTANA
+   Tema escuro | Azul e ciano | Layout responsivo
+   ========================================================== */
+
 :root {
   --bg: #080f1e;
   --bg2: #0d172a;
@@ -10,6 +15,8 @@
   --cyan: #67e3ef;
   --green: #6ee7b7;
 }
+
+/* CONFIGURAÇÕES GERAIS */
 
 * {
   box-sizing: border-box;
@@ -24,7 +31,8 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font: 16px/1.7 system-ui, -apple-system, "Segoe UI",
+        Roboto, sans-serif;
 }
 
 a {
@@ -57,7 +65,9 @@ button:focus-visible {
   top: 10px;
 }
 
-/* CABEÇALHO E MENU */
+/* ==========================================================
+   CABEÇALHO E NAVEGAÇÃO
+   ========================================================== */
 
 .header {
   position: sticky;
@@ -113,9 +123,12 @@ button:focus-visible {
   border-radius: 8px;
   padding: 5px 11px;
   font-size: 22px;
+  cursor: pointer;
 }
 
-/* APRESENTAÇÃO PRINCIPAL */
+/* ==========================================================
+   APRESENTAÇÃO PRINCIPAL
+   ========================================================== */
 
 .hero {
   min-height: 650px;
@@ -145,7 +158,10 @@ button:focus-visible {
   box-shadow: 0 0 14px var(--green);
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   margin-top: 0;
 }
 
@@ -185,7 +201,9 @@ h2 {
   color: var(--muted);
 }
 
-/* BOTÕES */
+/* ==========================================================
+   BOTÕES
+   ========================================================== */
 
 .actions {
   display: flex;
@@ -229,7 +247,9 @@ h2 {
   background: #1b2d48;
 }
 
-/* ETIQUETAS */
+/* ==========================================================
+   ETIQUETAS E CERTIFICAÇÕES
+   ========================================================== */
 
 .hero-tags,
 .chips {
@@ -248,14 +268,17 @@ h2 {
   font-size: .77rem;
 }
 
-/* TERMINAL LINUX */
+/* ==========================================================
+   TERMINAL LINUX
+   ========================================================== */
 
 .terminal {
   border: 1px solid #315174;
   border-radius: 14px;
   overflow: hidden;
   background: #091426;
-  box-shadow: 0 25px 80px #0008, 0 0 65px #137bd51a;
+  box-shadow: 0 25px 80px #0008,
+              0 0 65px #137bd51a;
   transform: rotate(1deg);
 }
 
@@ -292,7 +315,8 @@ h2 {
 
 .terminal-body {
   padding: 20px 18px;
-  font: 13px/1.8 ui-monospace, SFMono-Regular, Consolas, monospace;
+  font: 13px/1.8 ui-monospace,
+        SFMono-Regular, Consolas, monospace;
   overflow-wrap: anywhere;
 }
 
@@ -317,7 +341,9 @@ h2 {
   color: var(--cyan);
 }
 
-/* SEÇÕES */
+/* ==========================================================
+   SEÇÕES
+   ========================================================== */
 
 .section {
   padding: 95px 0;
@@ -334,7 +360,9 @@ h2 {
   gap: 45px;
 }
 
-/* EXPERIÊNCIA PROFISSIONAL */
+/* ==========================================================
+   EXPERIÊNCIA PROFISSIONAL
+   ========================================================== */
 
 .timeline {
   border-left: 2px solid #28486d;
@@ -353,7 +381,7 @@ h2 {
   padding-bottom: 0;
 }
 
-.job:before {
+.job::before {
   content: "";
   position: absolute;
   left: -7px;
@@ -387,11 +415,13 @@ h2 {
   max-width: 780px;
 }
 
-/* COMPETÊNCIAS E CARTÕES */
+/* ==========================================================
+   COMPETÊNCIAS E CARTÕES
+   ========================================================== */
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 17px;
 }
 
@@ -401,6 +431,7 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 24px;
+  min-width: 0;
 }
 
 .skill:hover {
@@ -439,16 +470,66 @@ h2 {
   margin-top: 20px;
 }
 
-/* CURSOS E APERFEIÇOAMENTO */
+/* ==========================================================
+   CURSOS E APERFEIÇOAMENTO PROFISSIONAL
+   Layout com 2 cartões por linha
+   ========================================================== */
 
 #cursos .intro {
-  max-width: 760px;
-  margin-bottom: 28px;
+  max-width: 850px;
+  margin-bottom: 32px;
 }
 
+/* Dois cartões por linha */
+
 #cursos .cards {
+  display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
 }
+
+/* Aparência dos cartões */
+
+#cursos .skill {
+  min-width: 0;
+  padding: 30px 34px;
+  border-radius: 16px;
+  transition: border-color .2s ease,
+              transform .2s ease;
+}
+
+#cursos .skill:hover {
+  border-color: var(--blue);
+  transform: translateY(-3px);
+}
+
+/* Ícones */
+
+#cursos .skill-icon {
+  color: var(--cyan);
+  margin-bottom: 20px;
+}
+
+#cursos .skill-icon svg {
+  display: block;
+  width: 34px;
+  height: 34px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  fill: none;
+}
+
+/* Títulos das áreas */
+
+#cursos .skill h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* Lista sem marcadores */
 
 #cursos .skill ul {
   list-style: none;
@@ -457,36 +538,44 @@ h2 {
 }
 
 #cursos .skill li {
-  color: var(--text);
-  font-size: .91rem;
-  line-height: 1.5;
-  padding: 10px 0;
+  list-style: none;
+  margin: 0;
+  padding: 15px 0;
   border-bottom: 1px solid var(--line);
+  color: var(--text);
+  font-size: .95rem;
+  line-height: 1.5;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+#cursos .skill li::marker {
+  content: "";
+}
+
+#cursos .skill li:first-child {
+  padding-top: 0;
 }
 
 #cursos .skill li:last-child {
-  border-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
 }
+
+/* Instituição responsável pelo curso */
 
 #cursos .skill li small {
   display: block;
   color: var(--muted);
-  font-size: .78rem;
-  margin-top: 3px;
+  font-size: .81rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 5px;
 }
 
-/* ÍCONES SVG DOS CURSOS */
-
-#cursos .skill-icon svg {
-  display: block;
-  width: 30px;
-  height: 30px;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  fill: none;
-}
-
-/* CONTATO E RODAPÉ */
+/* ==========================================================
+   CONTATO
+   ========================================================== */
 
 .contact {
   text-align: center;
@@ -499,6 +588,10 @@ h2 {
 .contact .actions {
   justify-content: center;
 }
+
+/* ==========================================================
+   RODAPÉ
+   ========================================================== */
 
 .footer {
   padding: 24px 0;
@@ -513,7 +606,9 @@ h2 {
   flex-wrap: wrap;
 }
 
-/* RESPONSIVIDADE - TABLETS */
+/* ==========================================================
+   RESPONSIVIDADE - TABLETS
+   ========================================================== */
 
 @media (max-width: 950px) {
   .hero {
@@ -528,11 +623,23 @@ h2 {
   }
 
   .cards {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* RESPONSIVIDADE - CELULARES */
+/* ==========================================================
+   RESPONSIVIDADE - CELULARES
+   ========================================================== */
+
+@media (max-width: 700px) {
+  #cursos .cards {
+    grid-template-columns: 1fr;
+  }
+
+  #cursos .skill {
+    padding: 24px;
+  }
+}
 
 @media (max-width: 650px) {
   .container {
@@ -607,7 +714,9 @@ h2 {
   }
 }
 
-/* ACESSIBILIDADE */
+/* ==========================================================
+   ACESSIBILIDADE
+   ========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -615,8 +724,8 @@ h2 {
   }
 
   *,
-  *:before,
-  *:after {
+  *::before,
+  *::after {
     transition: none !important;
   }
 }
