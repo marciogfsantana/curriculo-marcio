@@ -1,5 +1,10 @@
 
-/* Currículo online — Marcio Santana */
+/* ============================================
+   CURRÍCULO ONLINE — MARCIO SANTANA
+   CSS COMPLETO E ATUALIZADO
+   ============================================ */
+
+/* CORES E CONFIGURAÇÕES GERAIS */
 
 :root {
   --bg: #080f1e;
@@ -27,7 +32,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font: 16px/1.7 system-ui, -apple-system,
-        'Segoe UI', Roboto, sans-serif;
+        "Segoe UI", Roboto, sans-serif;
 }
 
 a {
@@ -60,7 +65,9 @@ button:focus-visible {
   top: 10px;
 }
 
-/* NAVEGAÇÃO */
+/* ============================================
+   CABEÇALHO E NAVEGAÇÃO
+   ============================================ */
 
 .header {
   position: sticky;
@@ -119,7 +126,9 @@ button:focus-visible {
   cursor: pointer;
 }
 
-/* APRESENTAÇÃO */
+/* ============================================
+   APRESENTAÇÃO PRINCIPAL
+   ============================================ */
 
 .hero {
   min-height: 650px;
@@ -201,7 +210,9 @@ h2 {
   color: var(--muted);
 }
 
-/* BOTÕES */
+/* ============================================
+   BOTÕES
+   ============================================ */
 
 .actions {
   display: flex;
@@ -220,7 +231,9 @@ h2 {
   padding: 12px 19px;
   font-weight: 700;
   font-size: .91rem;
-  transition: transform .2s, background .2s;
+  transition:
+    transform .2s,
+    background .2s;
 }
 
 .btn:hover {
@@ -245,7 +258,9 @@ h2 {
   background: #1b2d48;
 }
 
-/* TECNOLOGIAS E CERTIFICAÇÕES */
+/* ============================================
+   TECNOLOGIAS E CERTIFICAÇÕES
+   ============================================ */
 
 .hero-tags,
 .chips {
@@ -277,7 +292,9 @@ h2 {
   line-height: 1.5;
 }
 
-/* TERMINAL LINUX */
+/* ============================================
+   TERMINAL LINUX
+   ============================================ */
 
 .terminal {
   min-width: 0;
@@ -350,7 +367,9 @@ h2 {
   color: var(--cyan);
 }
 
-/* SEÇÕES */
+/* ============================================
+   SEÇÕES
+   ============================================ */
 
 .section {
   padding: 95px 0;
@@ -368,7 +387,9 @@ h2 {
   gap: 45px;
 }
 
-/* EXPERIÊNCIA PROFISSIONAL */
+/* ============================================
+   EXPERIÊNCIA PROFISSIONAL
+   ============================================ */
 
 .timeline {
   border-left: 2px solid #28486d;
@@ -389,7 +410,7 @@ h2 {
 }
 
 .job::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -7px;
   top: 8px;
@@ -422,7 +443,9 @@ h2 {
   max-width: 780px;
 }
 
-/* CARTÕES */
+/* ============================================
+   CARTÕES
+   ============================================ */
 
 .cards {
   display: grid;
@@ -476,22 +499,37 @@ h2 {
   margin-top: 20px;
 }
 
-/* ÍCONES DAS COMPETÊNCIAS */
+/* ============================================
+   COMPETÊNCIAS TÉCNICAS
+   ÍCONES PEQUENOS — 36 x 36 PIXELS
+   ============================================ */
 
 #competencias .skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 22px;
   color: var(--cyan);
-  margin-bottom: 20px;
 }
 
 #competencias .skill-icon svg {
   display: block;
-  width: 36px;
-  height: 36px;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px;
+  min-height: 36px;
+  max-width: 36px;
+  max-height: 36px;
+  flex-shrink: 0;
   stroke: currentColor;
   fill: none;
 }
 
-/* CURSOS E APERFEIÇOAMENTO */
+/* ============================================
+   CURSOS E APERFEIÇOAMENTO
+   ============================================ */
 
 #cursos .intro {
   max-width: 850px;
@@ -560,7 +598,7 @@ h2 {
 }
 
 #cursos .skill li::marker {
-  content: '';
+  content: "";
 }
 
 #cursos .skill li:first-child {
@@ -581,7 +619,9 @@ h2 {
   margin-top: 5px;
 }
 
-/* CONTATO E RODAPÉ */
+/* ============================================
+   CONTATO E RODAPÉ
+   ============================================ */
 
 .contact {
   text-align: center;
@@ -608,7 +648,9 @@ h2 {
   flex-wrap: wrap;
 }
 
-/* RESPONSIVIDADE — TABLETS */
+/* ============================================
+   RESPONSIVIDADE — TABLETS
+   ============================================ */
 
 @media (max-width: 950px) {
   .hero {
@@ -628,7 +670,9 @@ h2 {
   }
 }
 
-/* RESPONSIVIDADE — CELULARES */
+/* ============================================
+   RESPONSIVIDADE — CELULARES
+   ============================================ */
 
 @media (max-width: 700px) {
   #cursos .cards {
@@ -722,7 +766,9 @@ h2 {
   }
 }
 
-/* ACESSIBILIDADE */
+/* ============================================
+   ACESSIBILIDADE
+   ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
   html {
