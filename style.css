@@ -1,8 +1,5 @@
 
-/* ==========================================================
-   CURRÍCULO ONLINE — MARCIO SANTANA
-   Tema escuro | Azul e ciano | Layout responsivo
-   ========================================================== */
+/* Currículo online — Marcio Santana */
 
 :root {
   --bg: #080f1e;
@@ -15,8 +12,6 @@
   --cyan: #67e3ef;
   --green: #6ee7b7;
 }
-
-/* CONFIGURAÇÕES GERAIS */
 
 * {
   box-sizing: border-box;
@@ -31,8 +26,8 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 16px/1.7 system-ui, -apple-system, "Segoe UI",
-        Roboto, sans-serif;
+  font: 16px/1.7 system-ui, -apple-system,
+        'Segoe UI', Roboto, sans-serif;
 }
 
 a {
@@ -48,7 +43,7 @@ button:focus-visible {
 
 .container {
   width: min(1140px, calc(100% - 44px));
-  margin: auto;
+  margin-inline: auto;
 }
 
 .skip {
@@ -65,9 +60,7 @@ button:focus-visible {
   top: 10px;
 }
 
-/* ==========================================================
-   CABEÇALHO E NAVEGAÇÃO
-   ========================================================== */
+/* NAVEGAÇÃO */
 
 .header {
   position: sticky;
@@ -126,18 +119,21 @@ button:focus-visible {
   cursor: pointer;
 }
 
-/* ==========================================================
-   APRESENTAÇÃO PRINCIPAL
-   ========================================================== */
+/* APRESENTAÇÃO */
 
 .hero {
   min-height: 650px;
   padding-top: 115px;
   padding-bottom: 105px;
   display: grid;
-  grid-template-columns: 1.2fr .8fr;
+  grid-template-columns:
+    minmax(0, 1.2fr) minmax(0, .8fr);
   align-items: center;
   gap: 60px;
+}
+
+.hero-copy {
+  min-width: 0;
 }
 
 .eyebrow {
@@ -181,7 +177,11 @@ h2 {
 }
 
 .gradient {
-  background: linear-gradient(95deg, var(--blue), var(--cyan));
+  background: linear-gradient(
+    95deg,
+    var(--blue),
+    var(--cyan)
+  );
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -201,9 +201,7 @@ h2 {
   color: var(--muted);
 }
 
-/* ==========================================================
-   BOTÕES
-   ========================================================== */
+/* BOTÕES */
 
 .actions {
   display: flex;
@@ -232,7 +230,7 @@ h2 {
 .primary {
   background: #268ce7;
   border-color: #268ce7;
-  color: #fff;
+  color: white;
 }
 
 .primary:hover {
@@ -247,15 +245,18 @@ h2 {
   background: #1b2d48;
 }
 
-/* ==========================================================
-   ETIQUETAS E CERTIFICAÇÕES
-   ========================================================== */
+/* TECNOLOGIAS E CERTIFICAÇÕES */
 
 .hero-tags,
 .chips {
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
+}
+
+.hero-tags {
+  margin-top: 24px;
+  max-width: 100%;
 }
 
 .hero-tags span,
@@ -268,17 +269,25 @@ h2 {
   font-size: .77rem;
 }
 
-/* ==========================================================
-   TERMINAL LINUX
-   ========================================================== */
+.hero-tags span {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 6px 13px;
+  line-height: 1.5;
+}
+
+/* TERMINAL LINUX */
 
 .terminal {
+  min-width: 0;
   border: 1px solid #315174;
   border-radius: 14px;
   overflow: hidden;
   background: #091426;
-  box-shadow: 0 25px 80px #0008,
-              0 0 65px #137bd51a;
+  box-shadow:
+    0 25px 80px #0008,
+    0 0 65px #137bd51a;
   transform: rotate(1deg);
 }
 
@@ -341,9 +350,7 @@ h2 {
   color: var(--cyan);
 }
 
-/* ==========================================================
-   SEÇÕES
-   ========================================================== */
+/* SEÇÕES */
 
 .section {
   padding: 95px 0;
@@ -356,13 +363,12 @@ h2 {
 
 .two-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
   gap: 45px;
 }
 
-/* ==========================================================
-   EXPERIÊNCIA PROFISSIONAL
-   ========================================================== */
+/* EXPERIÊNCIA PROFISSIONAL */
 
 .timeline {
   border-left: 2px solid #28486d;
@@ -371,7 +377,8 @@ h2 {
 
 .job {
   display: grid;
-  grid-template-columns: 170px 1fr;
+  grid-template-columns:
+    170px minmax(0, 1fr);
   gap: 30px;
   position: relative;
   padding: 0 0 40px 30px;
@@ -382,7 +389,7 @@ h2 {
 }
 
 .job::before {
-  content: "";
+  content: '';
   position: absolute;
   left: -7px;
   top: 8px;
@@ -415,23 +422,22 @@ h2 {
   max-width: 780px;
 }
 
-/* ==========================================================
-   COMPETÊNCIAS E CARTÕES
-   ========================================================== */
+/* CARTÕES */
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
   gap: 17px;
 }
 
 .skill,
 .panel {
+  min-width: 0;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 24px;
-  min-width: 0;
 }
 
 .skill:hover {
@@ -470,41 +476,47 @@ h2 {
   margin-top: 20px;
 }
 
-/* ==========================================================
-   CURSOS E APERFEIÇOAMENTO PROFISSIONAL
-   Layout com 2 cartões por linha
-   ========================================================== */
+/* ÍCONES DAS COMPETÊNCIAS */
+
+#competencias .skill-icon {
+  color: var(--cyan);
+  margin-bottom: 20px;
+}
+
+#competencias .skill-icon svg {
+  display: block;
+  width: 36px;
+  height: 36px;
+  stroke: currentColor;
+  fill: none;
+}
+
+/* CURSOS E APERFEIÇOAMENTO */
 
 #cursos .intro {
   max-width: 850px;
   margin-bottom: 32px;
 }
 
-/* Dois cartões por linha */
-
 #cursos .cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
   gap: 24px;
   align-items: stretch;
 }
 
-/* Aparência dos cartões */
-
 #cursos .skill {
-  min-width: 0;
   padding: 30px 34px;
   border-radius: 16px;
-  transition: border-color .2s ease,
-              transform .2s ease;
+  transition:
+    border-color .2s,
+    transform .2s;
 }
 
 #cursos .skill:hover {
   border-color: var(--blue);
   transform: translateY(-3px);
 }
-
-/* Ícones */
 
 #cursos .skill-icon {
   color: var(--cyan);
@@ -520,8 +532,6 @@ h2 {
   fill: none;
 }
 
-/* Títulos das áreas */
-
 #cursos .skill h3 {
   font-size: 1.2rem;
   font-weight: 700;
@@ -529,7 +539,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* Lista sem marcadores */
+/* LISTA DE CURSOS SEM MARCADORES */
 
 #cursos .skill ul {
   list-style: none;
@@ -550,7 +560,7 @@ h2 {
 }
 
 #cursos .skill li::marker {
-  content: "";
+  content: '';
 }
 
 #cursos .skill li:first-child {
@@ -562,8 +572,6 @@ h2 {
   padding-bottom: 0;
 }
 
-/* Instituição responsável pelo curso */
-
 #cursos .skill li small {
   display: block;
   color: var(--muted);
@@ -573,9 +581,7 @@ h2 {
   margin-top: 5px;
 }
 
-/* ==========================================================
-   CONTATO
-   ========================================================== */
+/* CONTATO E RODAPÉ */
 
 .contact {
   text-align: center;
@@ -588,10 +594,6 @@ h2 {
 .contact .actions {
   justify-content: center;
 }
-
-/* ==========================================================
-   RODAPÉ
-   ========================================================== */
 
 .footer {
   padding: 24px 0;
@@ -606,9 +608,7 @@ h2 {
   flex-wrap: wrap;
 }
 
-/* ==========================================================
-   RESPONSIVIDADE - TABLETS
-   ========================================================== */
+/* RESPONSIVIDADE — TABLETS */
 
 @media (max-width: 950px) {
   .hero {
@@ -623,13 +623,12 @@ h2 {
   }
 
   .cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 }
 
-/* ==========================================================
-   RESPONSIVIDADE - CELULARES
-   ========================================================== */
+/* RESPONSIVIDADE — CELULARES */
 
 @media (max-width: 700px) {
   #cursos .cards {
@@ -712,11 +711,18 @@ h2 {
   .btn {
     width: 100%;
   }
+
+  .hero-tags {
+    gap: 7px;
+  }
+
+  .hero-tags span {
+    font-size: .72rem;
+    padding: 5px 10px;
+  }
 }
 
-/* ==========================================================
-   ACESSIBILIDADE
-   ========================================================== */
+/* ACESSIBILIDADE */
 
 @media (prefers-reduced-motion: reduce) {
   html {
